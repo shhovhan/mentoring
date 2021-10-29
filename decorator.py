@@ -33,7 +33,7 @@ def type_of_coffee(name):
 
 
 @sugar(2)
-@syrup('mapple')
+@syrup('Maple')
 @milk_coffee
 def coffee(type_of_coffee):
     print(f'Making {type_of_coffee}')

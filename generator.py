@@ -6,5 +6,5 @@ def generator_func():
 
 gen = generator_func()
 
-for i in gen:
-    print(i)
+for item in gen:
+    print(item)
