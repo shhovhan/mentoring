@@ -1,23 +1,43 @@
-def hi(func):
+def milk_coffee(func):
     def wrapper(*args, **kwargs):
-        str = "hello " + func(*args, **kwargs)
-        return str
-
+        func(*args, **kwargs)
+        print('+Milk')
     return wrapper
 
 
-def hello(name):
+def syrup(syrup_type):
     def wrapper(func):
         def inner_wrapper(*args, **kwargs):
-            return 'Hello ' + func(*args, **kwargs) + ' and ' + name
+            func(*args, **kwargs)
+            print(f'+{syrup_type} syrup')
         return inner_wrapper
-
     return wrapper
 
 
-@hello('Hanna')
-def greeting(name):
-    return name
+def sugar(how_many):
+    def wrapper(func):
+        def inner_wrapper(*args, **kwargs):
+            func(*args, **kwargs)
+            print(f'+Sugar {how_many} spoons')
+        return inner_wrapper
+    return wrapper
 
 
-print(greeting('Shushan'))
+def type_of_coffee(name):
+    def wrapper(func):
+        def inner_wrapper(*args, **kwargs):
+            print(f'Make {name}')
+            func(*args, **kwargs)
+        return inner_wrapper
+    return wrapper
+
+
+@sugar(2)
+@syrup('mapple')
+@milk_coffee
+def coffee(type_of_coffee):
+    print(f'Making {type_of_coffee}')
+    print('Coffee')
+
+
+coffee('Cappuccino')
