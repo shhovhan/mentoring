@@ -1,8 +1,10 @@
-STRING1 = "1223"
-STRING2 = "45678"
-
-
 def sum_of_strings(str1, str2):
+    """
+    Calculate sum of given strings, which contain only integers without using int() function to convert strings
+    :param str1: first string of integer numbers
+    :param str2: second string of integer numbers
+    :return: Sum of converted strings
+    """
     int1 = 0
     int2 = 0
     for s1 in str1:
@@ -14,4 +16,5 @@ def sum_of_strings(str1, str2):
     return int2 + int1
 
 
-print(sum_of_strings(STRING1, STRING2))
+if __name__ == '__main__':
+    print(sum_of_strings("1223", "45678"))

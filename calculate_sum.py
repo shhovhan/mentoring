@@ -2,6 +2,11 @@ import tracemalloc
 
 
 def calculate_sum_with_for(arr):
+    """
+    Calculate summary of all elements in array using for loop
+    :param arr: given array
+    :return: summary of all elements in array
+    """
     sum_of_numbers = 0
     for i in arr:
         sum_of_numbers += i
@@ -10,6 +15,11 @@ def calculate_sum_with_for(arr):
 
 
 def calculate_sum_with_while(arr):
+    """
+    Calculate summary of all elements in array using while loop
+    :param arr: given array
+    :return: summary of all elements in array
+    """
     sum_of_numbers = 0
     i = 0
     while i < len(arr):
@@ -20,6 +30,11 @@ def calculate_sum_with_while(arr):
 
 
 def calculate_sum_with_recursion(arr):
+    """
+    Calculate summary of all elements in array by recursion
+    :param arr: given array
+    :return: summary of all elements in array
+    """
     if len(arr) == 0:
         return 0
     return arr[0] + calculate_sum_with_recursion(arr[1:])

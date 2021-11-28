@@ -3,11 +3,13 @@ import time
 
 from datetime import datetime
 
-file_name = 'rows_300.csv'
 
-
-def create_csv(file):
-    with open(file, 'w', newline='') as f:
+def create_csv():
+    """
+    Create csv which contains current minutes, seconds and microseconds of PC
+    :return: Created CSV file
+    """
+    with open('rows_300.csv', 'w', newline='') as f:
         writer = csv.writer(f, delimiter=',')
         writer.writerow(['#', 'Minutes', 'Seconds', 'Microseconds'])
 
@@ -18,4 +20,5 @@ def create_csv(file):
             time.sleep(2)
 
 
-create_csv(file_name)
+if __name__ == '__main__':
+    create_csv()

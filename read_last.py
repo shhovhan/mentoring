@@ -1,4 +1,10 @@
 def read_last(lines_count, file):
+    """
+    Function to return last n lines
+    :param lines_count: how many lines to return
+    :param file: Filename to read lines
+    :return: Last lines_count of lines from file
+    """
     if lines_count < 0:
         print('Positive integer must be given as a lines count')
         return
@@ -14,4 +20,5 @@ def read_last(lines_count, file):
         return line
 
 
-print(read_last(2, './article.txt'))
+if __name__ == '__main__':
+    print(read_last(2, './article.txt'))

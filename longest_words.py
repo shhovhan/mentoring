@@ -1,4 +1,3 @@
-filename = 'article.txt'
 
 
 def longest_word(file):
@@ -16,4 +15,6 @@ def longest_word(file):
     print(max_len_words)
 
 
-longest_word(filename)
+if __name__ == '__main__':
+    FILENAME = 'article.txt'
+    longest_word(FILENAME)

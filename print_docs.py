@@ -1,8 +1,12 @@
 from pathlib import Path
-DIRNAME = '/home/shushanik_hovhannesyan/Documents/AWS_Training'
 
 
 def print_docs(directory):
+    """
+    Print files and subdirectories in given directory
+    :param directory: Given direcotory
+    :return: Nothing. Prints filenames and directory names
+    """
     basedir = Path(directory)
     for item in basedir.iterdir():
         if item.is_dir():
@@ -12,4 +16,6 @@ def print_docs(directory):
             print(item.name)
 
 
-print_docs(DIRNAME)
+if __name__ == '__main__':
+    DIRNAME = '/home/shushanik_hovhannesyan/Documents/AWS_Training'
+    print_docs(DIRNAME)
