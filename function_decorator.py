@@ -36,14 +36,11 @@ def type_of_coffee(name):
     return wrapper
 
 
-@sugar(2)
-@syrup('Maple')
-@milk_coffee
-# Coffee function
-def coffee(type_of_coffee):
-    print(f'Making {type_of_coffee}')
-    print('Coffee')
+# decorator function to calculate function calls
+def count_calls(func):
+    def wrapper(*args, **kwargs):
+        wrapper.calls_count += 1
+        func(*args, **kwargs)
 
-
-if __name__ == '__main__':
-    coffee('Cappuccino')
+    wrapper.calls_count = 0
+    return wrapper
