@@ -1,3 +1,5 @@
+import functools
+import time
 # decorator function to add milk in coffee
 def milk_coffee(func):
     def wrapper(*args, **kwargs):
@@ -43,4 +45,26 @@ def count_calls(func):
         func(*args, **kwargs)
 
     wrapper.calls_count = 0
+    return wrapper
+
+
+def timing(func):
+    """Print the runtime of the decorated function"""
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time.perf_counter()    # 1
+        value = func(*args, **kwargs)
+        end_time = time.perf_counter()      # 2
+        run_time = end_time - start_time    # 3
+        print(f'Finished {func.__name__} in {run_time} secs')
+        return value
+    return wrapper
+
+
+def debug(func):
+    """Print the function arguments and return value"""
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        print(f'Calling {func.__name__} with arguments {args, kwargs}')
+        return func(*args, **kwargs)
     return wrapper

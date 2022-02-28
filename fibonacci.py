@@ -1,3 +1,7 @@
+from function_decorator import debug
+
+
+@debug
 def fibonacci(n):
     """
     Function which returns first n fibonacci numbers
@@ -12,4 +16,5 @@ def fibonacci(n):
     return fib
 
 
-print(fibonacci(100))
+if __name__ == '__main__':
+    print(fibonacci(50))
